@@ -1,6 +1,8 @@
 package webdriver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -16,7 +18,15 @@ public class Topic_02_Selenium_Locator {
 
         // open application
         driver.get("https://admin-demo.nopcommerce.com/login");
+
+        // tìm 1 element
+        driver.findElement(By.id("")).click();
+
+        //tìm nhiều element giống nhau
+        driver.findElements(By.cssSelector("")).get(0).click();
     }
+
+
 
 
     @Test
@@ -40,7 +50,9 @@ public class Topic_02_Selenium_Locator {
     }
 
 
+    public void clickToElement(String locator, int index) {
 
+    }
 
 
 
