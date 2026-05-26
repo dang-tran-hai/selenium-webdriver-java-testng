@@ -85,18 +85,29 @@ public class Topic_02_Selenium_Locator {
 
     @Test
     public void TC_07_Css(){
-        // Cách viết của Css kết hợp id
+        // Cách viết của Css kết hợp id/ link/ partial link
         // Css không hỗ trợ text
         driver.findElement(By.cssSelector("input[id='Company']"));
         driver.findElement(By.cssSelector("input#Company"));
         driver.findElement(By.cssSelector("#Company"));
         driver.findElement(By.cssSelector("button.register-next-step-button"));
         driver.findElement(By.cssSelector("button[class='button-1 register-next-step-button']"));
+        driver.findElement(By.cssSelector("a[href*='register?']")); // partial link
+        driver.findElement(By.cssSelector("a[href*='/register?returnUrl=%2Fdigital-downloads']"));
+
+        driver.findElement(By.cssSelector("a"));
+        driver.findElement(By.cssSelector("button"));
+        driver.findElement(By.cssSelector("input"));
 
     }
 
     @Test
     public void TC_08_XPath(){
+        driver.findElement(By.xpath("//input[@id='small-searchterms']"));
+        driver.findElement(By.xpath("//input[@id='FirstName']"));
+        driver.findElement(By.xpath("//input[@id='Password']"));
+        driver.findElement(By.xpath("//input[@id='Company']"));
+        driver.findElement(By.xpath("//input[@id='Company']"));
 
     }
 
