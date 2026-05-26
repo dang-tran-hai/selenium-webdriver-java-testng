@@ -3,6 +3,7 @@ package webdriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -37,6 +38,8 @@ public class Topic_02_Selenium_Locator {
     }
     @Test
     public void TC_02_Class() throws InterruptedException {
+        // giá trị trong class mà không có khoảng trắng thì lấy toàn bộ
+        // giá trị có khoảng trắng thì lấy phần nào là duy nhất
         driver.findElement(By.className("register-next-step-button")).click();
         Thread.sleep(3000);
     }
@@ -103,15 +106,43 @@ public class Topic_02_Selenium_Locator {
 
     @Test
     public void TC_08_XPath(){
+        // Css làm được gì thì Xpath đều làm được hết
+        // truyền cú pháp đúng nó mới tìm thấy
         driver.findElement(By.xpath("//input[@id='small-searchterms']"));
         driver.findElement(By.xpath("//input[@id='FirstName']"));
         driver.findElement(By.xpath("//input[@id='Password']"));
         driver.findElement(By.xpath("//input[@id='Company']"));
         driver.findElement(By.xpath("//input[@id='Company']"));
 
+        driver.findElement(By.xpath("//button[@class='button-1 register-next-step-button']"));
+        driver.findElement(By.xpath("//button[contains(@class,'register-next-step-button')]"));
+
+        driver.findElement(By.xpath("//select[@name='customerCurrency']"));
+        driver.findElement(By.xpath("//a[text()='Register']"));
+        driver.findElement(By.xpath("//a[text()='Shipping & returns']"));
+        driver.findElement(By.xpath("//a[contains(text(),'Privacy')]"));
+        driver.findElement(By.xpath("//a")); // tagname -> lấy tất cả thẻ a ra
+        driver.findElement(By.xpath("//button"));
+        driver.findElement(By.xpath("//input"));
+
     }
 
+    @Test
+    public void TC_09_Relative_Locator(){
+        // Element/ By A
+        // khai báo biến passwordTextboxBy hứng lấy giá trị bên phải có kiểu dữ liệu là By
+        By passwordTextboxBy= By.cssSelector("input#Password");
 
+        WebElement passwordTextbox = driver.findElement(By.cssSelector("input#Password"));
+
+        // Element/ By B
+        By rememberMeCheckboxBy = By.cssSelector("input#RememberMe");
+        By rememberMeChecboxByone = By.id("RememberMe");
+
+        By PasswordLinkby = By.cssSelector("span.forgot-password");
+
+
+    }
 
     @AfterClass
     public void cleanBrowser(){
