@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -128,10 +129,11 @@ public class Topic_02_Selenium_Locator {
     }
 
     @Test
-    public void TC_09_Relative_Locator(){
+    public void TC_09_Relative_Locator() {
+        driver.get("https://demo.nopcommerce.com/login");
         // Element/ By A
         // khai báo biến passwordTextboxBy hứng lấy giá trị bên phải có kiểu dữ liệu là By
-        By passwordTextboxBy= By.cssSelector("input#Password");
+        By passwordTextboxBy = By.cssSelector("input#Password");
 
         WebElement passwordTextbox = driver.findElement(By.cssSelector("input#Password"));
 
@@ -139,8 +141,20 @@ public class Topic_02_Selenium_Locator {
         By rememberMeCheckboxBy = By.cssSelector("input#RememberMe");
         By rememberMeChecboxByone = By.id("RememberMe");
 
-        By PasswordLinkby = By.cssSelector("span.forgot-password");
+        By forgotPasswordLinkby = By.cssSelector("span.forgot-password");
 
+        By loginButtonBy = By.cssSelector("button.login-button");
+
+        WebElement rememberMeLabelText = driver.findElement(RelativeLocator.with(By.tagName("label"))
+                .above(loginButtonBy) // label đang nằm trên login button
+                .below(passwordTextboxBy).toLeftOf(forgotPasswordLinkby)
+                .toRightOf(rememberMeCheckboxBy)
+                .near(rememberMeChecboxByone)
+                .near(forgotPasswordLinkby)
+
+        );
+        // 1- dùng relative locator khi không thể định danh được element đó
+        // 2- dùng để test GUI - vị trí element có khớp với design không
 
     }
 
