@@ -134,7 +134,7 @@ public class Topic_02_Selenium_Locator {
         // Element/ By A
         // khai báo biến passwordTextboxBy hứng lấy giá trị bên phải có kiểu dữ liệu là By
         By passwordTextboxBy = By.cssSelector("input#Password");
-
+        //dùng locator đi tìm và gán vào 1 element
         WebElement passwordTextbox = driver.findElement(By.cssSelector("input#Password"));
 
         // Element/ By B
@@ -155,6 +155,32 @@ public class Topic_02_Selenium_Locator {
         );
         // 1- dùng relative locator khi không thể định danh được element đó
         // 2- dùng để test GUI - vị trí element có khớp với design không
+        // search text box
+        driver.findElement(By.xpath("//input[@id=\"small-searchterms\"]"));
+
+        //<input type="email" autocapitalize="off"
+        //autocorrect="off" spellcheck="false" name="login[username]"
+        // value="" id="email" class="input-text required-entry validate-email"
+        // title="Email Address">
+
+        //input[@type='email']
+        //input[@autocapitalize='off']
+        //input[@autocorrect='off']
+        //input[@spellcheck='false']
+
+        //input[@class='input-text required-entry validate-email']
+
+
+        //1- duy nhất
+        //input[@name='login[username]']
+        //input[@id='email']
+        //input[@title='Email Address']
+
+        // 2- ưu tiên có id/ class/ name thì dùng trước
+        //input[@name='login[username]']
+        //input[@id='email']
+
+        //3- không có id/class/name thì dùng bất kỳ 1 attribute khác
 
     }
 
