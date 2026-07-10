@@ -1,13 +1,21 @@
 package webdriver;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chromium.ChromiumDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_00_Template {
+import java.net.URL;
+
+public class Topic_06_WebBrowser_Commands {
 
     // 1- Setup OS/Browser/web/Pages/Data/Variable/Object..
 
@@ -15,7 +23,15 @@ public class Topic_00_Template {
     @BeforeClass
     public void initialBrowser() {
         driver= new FirefoxDriver();
-        driver.get("https://admin-demo.nopcommerce.com/");
+        //driver.get("https://admin-demo.nopcommerce.com/");
+        driver=new ChromeDriver();
+        driver=new EdgeDriver();
+        driver= new SafariDriver();
+        driver= new InternetExplorerDriver();
+        driver= new ChromiumDriver();
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        WebDriver driver = new RemoteWebDriver(new URL("http://gridUrl:4444"), chromeOptions);
     }
 
     // 2-Action/Execute: interact element/ input/verify...
