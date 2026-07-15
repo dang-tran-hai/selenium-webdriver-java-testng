@@ -2,13 +2,10 @@ package webdriver;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,7 +16,7 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.Set;
 
-public class Topic_06_WebBrowser_Commands {
+public class Topic_05_WebBrowser_Commands {
 
     // 1- Setup OS/Browser/web/Pages/Data/Variable/Object..
 
