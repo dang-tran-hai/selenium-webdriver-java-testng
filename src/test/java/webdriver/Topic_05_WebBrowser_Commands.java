@@ -28,9 +28,9 @@ public class Topic_05_WebBrowser_Commands {
         // driver.get("https://admin-demo.nopcommerce.com/");
         driver = new ChromeDriver();
         driver = new EdgeDriver();
-        //driver = new SafariDriver();
-        //driver = new InternetExplorerDriver();
-        //driver = new ChromiumDriver();
+        // driver = new SafariDriver();
+        // driver = new InternetExplorerDriver();
+        // driver = new ChromiumDriver();
 
         ChromeOptions chromeOptions = new ChromeOptions();
         WebDriver driver = new RemoteWebDriver(URI.create("https://www.youtube.com").toURL(), chromeOptions);
