@@ -116,6 +116,19 @@ public class Topic_06_WebElement_Commands {
         elementSize.getWidth();
         elementSize.getHeight();
 
+       Rectangle  rectangleElement= webElement.getRect();
+        rectangleElement.getX();2
+        rectangleElement.getY();
+
+        // khi không biết tên thẻ của element là gì (trong trường hợp dùng CSS để viết tắt locator)
+        // từ locator sẽ ra tên thẻ tương ứng
+        webElement.getTagName();
+
+        // lấy ra hình ảnh của trang/ element trả về kiểu File/byte...
+        webElement.getScreenshotAs(OutputType.BYTES);
+        webElement.getScreenshotAs(OutputType.FILE);
+        webElement.getScreenshotAs(OutputType.BASE64);
+
 
 
 
